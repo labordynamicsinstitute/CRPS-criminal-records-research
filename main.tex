@@ -1,0 +1,39 @@
+\documentclass[letterpaper,man,natbib]{apa6}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\input{template.tex}
+
+\title{Criminal Records and Socio-Economic Outcomes}
+\shorttitle{CR and Outcomes}
+\author{Lars Vilhuber}
+\affiliation{Cornell University}
+
+\abstract{Looking at what is known about criminal records and socio-economic outcomes.}
+
+\begin{document}
+\maketitle
+\iftoggle{final}{}{%
+\listoftodos
+\newpage
+}
+
+
+You can add inline TODO comments with the %\mc{todonotes}{This is a margin comment.} 
+todonotes package, like this:
+\todo[inline, color=green!40]{This is an inline comment.}
+
+Bla bla bla %\insertref{Needs a ref}.
+
+\bibliography{example}
+
+\end{document}
+
+%
+% Please see the package documentation for more information
+% on the APA6 document class:
+%
+% http://www.ctan.org/pkg/apa6
+%

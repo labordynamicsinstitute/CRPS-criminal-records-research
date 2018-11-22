@@ -1,0 +1,41 @@
+\usepackage{etoolbox}
+\usepackage{geometry}
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+
+%%% 
+%%%   INSTRUCTIONS
+%%%
+%%% Just comment out one or the other of the "togglefalse/toggletrue" pairs
+
+\newtoggle{final}
+\newtoggle{blind}
+\togglefalse{final}
+%\toggletrue{final}
+%\toggletrue{blind}
+\togglefalse{blind}
+
+%
+% Layout
+%
+\iftoggle{final}{
+%  \geometry{left=1.0in,right=1.0in,top=1.0in,bottom=1.0in}
+}%else
+{
+  \geometry{left=0.5in,right=2.0in,top=1.0in,bottom=1.0in,marginparwidth=1.5in}
+  }
+
+\iftoggle{final}{
+    \usepackage[disable]{todonotes}
+    \newcommand{\mc}[2]{#1} % make margincomments go away
+    \newcommand{\insertref}[1]{}
+}%else
+{
+    \usepackage[colorinlistoftodos]{todonotes}
+    \newcommand{\insertref}[1]{\todo[color=green!40]{#1}}
+    \newcommand{\mc}[2]{% 1 referenced text 2  comment
+       \textcolor{OliveGreen}{#1}
+       \todo{\scriptsize\textbf\raggedright{#2}}}
+}
+

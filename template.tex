@@ -2,6 +2,7 @@
 \usepackage{geometry}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{versions}
+\usepackage{setspace}
 \newcommand{\red}{\color{red}}
 \newcommand{\blue}{\color{blue}}
 \newcommand{\green}{\color{green}}
@@ -67,6 +68,8 @@
     \usepackage[colorinlistoftodos]{todonotes}
     \newcommand{\insertref}[1]{\todo[color=green!40]{#1}}
     \newcommand{\mc}[2]{% 1 referenced text 2  comment
-       \textcolor{OliveGreen}{#1}
-       \todo{\scriptsize\textbf\raggedright{#2}}}
+       \textcolor{OliveGreen}{#1}%
+       \todo[linecolor=OliveGreen]{\protect\begin{spacing}{0.5}#2\protect\end{spacing}}~
+    }
+
 }

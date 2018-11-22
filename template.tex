@@ -1,5 +1,7 @@
 \usepackage{etoolbox}
 \usepackage{geometry}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{versions}
 \newcommand{\red}{\color{red}}
 \newcommand{\blue}{\color{blue}}
 \newcommand{\green}{\color{green}}
@@ -16,6 +18,30 @@
 %\toggletrue{blind}
 \togglefalse{blind}
 
+% 
+% Align numbers in tables
+%
+
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\usepackage{siunitx}
+%
+% Include/exclude environments
+%
+\iftoggle{final}{\excludeversion{instructions}}%
+{\includeversion{instructions}}
+
+
+%
+% allow for instructions
+%
+\renewenvironment{instructions}{\color{lightgray}\footnotesize\it
+\begin{tabular}{p{0.9\textwidth}}
+    \hline\\
+    }%
+{\\\hline\\\end{tabular}}
+
+
 %
 % Layout
 %
@@ -26,6 +52,12 @@
   \geometry{left=0.5in,right=2.0in,top=1.0in,bottom=1.0in,marginparwidth=1.5in}
   }
 
+%
+% Notes
+%
+% May also want to insert the following near the top of the document
+%
+%
 \iftoggle{final}{
     \usepackage[disable]{todonotes}
     \newcommand{\mc}[2]{#1} % make margincomments go away
@@ -38,4 +70,3 @@
        \textcolor{OliveGreen}{#1}
        \todo{\scriptsize\textbf\raggedright{#2}}}
 }
-

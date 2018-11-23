@@ -62,11 +62,11 @@
 \iftoggle{final}{
     \usepackage[disable]{todonotes}
     \newcommand{\mc}[2]{#1} % make margincomments go away
-    \newcommand{\insertref}[1]{}
+    \newcommand{\needcite}[1]{}
 }%else
 {
     \usepackage[colorinlistoftodos]{todonotes}
-    \newcommand{\insertref}[1]{\todo[color=red!40]{\textbf{Ref needed:} #1}(\textcolor{red}{XX})}
+    \newcommand{\needcite}[1]{\todo[color=red!40]{\textbf{Ref needed:} #1}(\textcolor{red}{XX})}
     \newcommand{\mc}[2]{% 1 referenced text 2  comment
        \textcolor{OliveGreen}{#1}%
        \todo[linecolor=OliveGreen]{\protect\begin{spacing}{0.5}#2\protect\end{spacing}}~

@@ -1,0 +1,59 @@
+% !TeX TXS-program:bibliography = txs:///biber
+% !TeX program = xelatex
+
+\documentclass[12pt,letterpaper]{article}
+% \usepackage[utf8]{inputenc}
+\usepackage{etoolbox}
+% % ======== SET THIS FLAG to indicate whether to use a local or remote bib file
+% \newtoggle{local}
+% %\togglefalse{local}
+% \toggletrue{local}
+
+\usepackage[%
+plainpages,%
+colorlinks,%
+urlcolor=black,%
+filecolor=black,%
+pdfpagemode=UseOutlines,%
+pdfauthor={Lars Vilhuber},%
+pdfsubject={Bibliography},%
+]{hyperref}
+\usepackage[style=reading,maxnames=10,backend=biber]{biblatex}
+
+\author{Lars Vilhuber}
+\date{\today}
+
+
+% \iftoggle{local}{
+	\addbibresource{zotero-crps.bib}
+	\title{CRPS Criminal Records and Socio-Economic Outcomes Bibliography}
+% }%else
+% {
+% 	\addbibresource[location=remote]{https://www.ncrn.cornell.edu/wp-content/uploads/2016/10/library.bib}
+% 	\title{Sloan Privacy Bibliography}
+% }
+
+\defbibfilter{papers}{
+	type=article or
+	type=inproceedings or
+	type=conference or
+	type=proceedings or
+	type=incollection or 
+	type=inbook
+}
+
+\defbibfilter{crossref}{
+	type=book
+}
+
+\begin{document}
+\maketitle
+\nocite{*}
+This bibliography is generated for the CRPS project at Cornell University. It is a curated selection of privacy-related articles. Articles are in alphabetical order of the first author's last name.
+
+
+\printbibliography[title={Articles}]
+% \printbibliography[type=report,title={Preprints and Working papers}]
+% \printbibliography[nottype=report,nottype=article,title={Other publications}]
+
+\end{document}
